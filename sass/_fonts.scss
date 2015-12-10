@@ -1,0 +1,14 @@
+/* ============================ */
+/* ============================ */
+/* FONTS */
+@mixin fontcaption{
+	font-family: 'PT Serif', serif;
+}
+
+@mixin fontstack{
+	font-family: 'PT Sans', sans-serif;
+}
+
+@mixin fastack{
+	font-family: FontAwesome, 'PT Sans', sans-serif;
+}
