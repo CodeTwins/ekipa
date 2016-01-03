@@ -9,8 +9,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
 
 
-    <link rel="image_src" href="img/simple_logo.jpg">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    {% load staticfiles %}
+    <link rel="image_src" href="{% static 'img/simple_logo.jpg' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     
     <meta name="title" content="EKIПA — Football Agency" />
     <meta name="description" content="Ekipa — football agency" />
@@ -25,7 +26,7 @@
     <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
     <!--[if IE 7]>
-        <link rel="stylesheet" href="css/font-awesome-4.2.0/css/font-awesome-ie7.min.css">
+        <link rel="stylesheet" href="{% static 'css/font-awesome-4.2.0/css/font-awesome-ie7.min.css' %}">
     <![endif]-->
 
     <!-- STYLES -->
@@ -36,7 +37,7 @@
     <![endif]-->
 
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -54,7 +55,7 @@
             <div class="col-12-full clearfix">
                 <header class="clearfix">
                     <div id="logo" class="col-3 left">
-                        <a href=""><img src="img/logo-black.png" alt=""></a>
+                        <a href=""><img src="{% static 'img/logo-black.png' %}" alt=""></a>
                     </div>
                     <div id="menu" class="col-9 right">
                         <ul class="clearfix">
@@ -84,7 +85,7 @@
                     <div class="news-item col-4">
                         <div class="news-item-image">
                             <a href="">
-                                <img src="assets/stadium.jpg" alt="">
+                                <img src="{% static 'assets/stadium.jpg' %}" alt="">
                             </a>
                         </div>
                         <div class="news-item-title">
@@ -98,7 +99,7 @@
                     <div class="news-item col-4">
                         <div class="news-item-image">
                             <a href="">
-                                <img src="assets/stadium.jpg" alt="">
+                                <img src="{% static 'assets/stadium.jpg' %}" alt="">
                             </a>
                         </div>
                         <div class="news-item-title">
@@ -112,7 +113,7 @@
                     <div class="news-item col-4">
                         <div class="news-item-image">
                             <a href="">
-                                <img src="assets/stadium.jpg" alt="">
+                                <img src="{% static 'assets/stadium.jpg' %}" alt="">
                             </a>
                         </div>
                         <div class="news-item-title">
@@ -126,7 +127,7 @@
                     <div class="news-item col-4">
                         <div class="news-item-image">
                             <a href="">
-                                <img src="assets/stadium.jpg" alt="">
+                                <img src="{%  static 'assets/stadium.jpg' %}" alt="">
                             </a>
                         </div>
                         <div class="news-item-title">
@@ -140,7 +141,7 @@
                     <div class="news-item col-4">
                         <div class="news-item-image">
                             <a href="">
-                                <img src="assets/stadium.jpg" alt="">
+                                <img src="{%   %}assets/stadium.jpg" alt="">
                             </a>
                         </div>
                         <div class="news-item-title">

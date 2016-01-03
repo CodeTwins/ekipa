@@ -18,7 +18,7 @@ class News(models.Model):
     text = HTMLField(configuration='CKEDITOR_MODEL_V1', blank=True)
     image = FilerImageField(blank=True, null=True, on_delete=models.SET_NULL)
 
-    def __unicode__(self):
+    def __str__(self):
         return self.title
 
 
