@@ -8,9 +8,10 @@
     <meta name="MobileOptimized" content="320"> 
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
 
+    {% load cms_tags sekizai_tags staticfiles thumbnail %}
 
-    <link rel="image_src" href="img/simple_logo.jpg">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
+    <link rel="image_src" href="{% static 'img/simple_logo.jpg' %}">
+    <link rel="shortcut icon" href="{% static 'favicon.ico' %}" type="image/x-icon">
     
     <meta name="title" content="EKIПA — Football Agency">
     <meta name="description" content="Ekipa — football agency">
@@ -30,13 +31,13 @@
 
     <!-- STYLES -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
     <!--[if IE]>
         <link rel="stylesheet" type="text/css" href="css/style-IE.css" />
     <![endif]-->
 
     <!-- SCRIPTS -->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="{% static 'js/jquery-1.11.1.min.js' %}"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
     <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
     <!--[if lt IE 9]>
@@ -77,47 +78,10 @@
                         <img src="assets/stadium.jpg" alt="">
                     </div>
                     <div class="content-block-text">
-                        <h1 class="content-block-text-heading">Russia seeks economic revenge against Turkey over downed jet</h1>
-                        <div class="content-block-text-date">17 Jan 2015</div>
+                        <h1 class="content-block-text-heading">{{ news.title }}</h1>
+                        <div class="content-block-text-date">{{ news.publication_date }}</div>
                         <div class="content-block-text-post text">
-                            <p>
-                                Целевой сегмент рынка, безусловно, спорадически порождает комплексный охват аудитории. Интересно отметить, что создание приверженного покупателя тормозит системный анализ, <a href="">отвоевывая</a> свою долю рынка. VIP-мероприятие, вопреки мнению П.Друкера, методически отражает обществвенный инвестиционный продукт, не считаясь с затратами. Отсюда естественно следует, что соц-дем характеристика аудитории одновременно определяет конвергентный product placement.
-                            </p>
-                            <p>
-                                Адекватная ментальность, как принято считать, по-прежнему востребована. Пак-шот спонтанно индуцирует ролевой бизнес-план. Повышение жизненных стандартов недостижимо. Служба маркетинга компании вырождена. Структура рынка, согласно Ф.Котлеру, интегрирована. Коммуникация раскручивает бренд.
-                            </p>
-                            <p>
-                                Изменение глобальной стратегии отталкивает процесс стратегического планирования, не считаясь с затратами. Метод изучения рынка программирует принцип восприятия, учитывая современные тенденции. Рыночная информация создает CTR. Потребление изменяет сублимированный фактор коммуникации. Бизнес-модель требовальна к креативу. Пресс-клиппинг раскручивает потребительский показ баннера.
-                            </p>
-                            <h1>Heading 1</h1>
-                            <p>
-                                Product placement, пренебрегая деталями, переворачивает мониторинг активности. Поэтому рекламоноситель наиболее полно искажает анализ зарубежного опыта. VIP-мероприятие, безусловно, специфицирует контент.
-                            </p>
-                            <h2>Heading 2</h2>
-                            <p>
-                                Product placement, пренебрегая деталями, переворачивает мониторинг активности. Поэтому рекламоноситель наиболее полно искажает анализ зарубежного опыта. VIP-мероприятие, безусловно, специфицирует контент.
-                            </p>
-                            <h3>Heading 3 </h3>
-                            <p>
-                                Product placement, пренебрегая деталями, переворачивает мониторинг активности. Поэтому рекламоноситель наиболее полно искажает анализ зарубежного опыта. VIP-мероприятие, безусловно, специфицирует контент.
-                            </p>
-                            <h4>Heading 4</h4>
-                            <p>
-                                Product placement, пренебрегая деталями, переворачивает мониторинг активности. Поэтому рекламоноситель наиболее полно искажает анализ зарубежного опыта. VIP-мероприятие, безусловно, специфицирует контент.
-                            </p>
-                            <h5>Heading 5</h5>
-                            <p>
-                                Product placement, пренебрегая деталями, переворачивает мониторинг активности. Поэтому рекламоноситель наиболее полно искажает анализ зарубежного опыта. VIP-мероприятие, безусловно, специфицирует контент.
-                            </p>
-                            <h6>Heading 6</h6>
-                            <p>
-                                Product placement, пренебрегая деталями, переворачивает мониторинг активности. Поэтому рекламоноситель наиболее полно искажает анализ зарубежного опыта. VIP-мероприятие, безусловно, специфицирует контент.
-                            </p>
-                            <ul>
-                                <li>List item 1</li>
-                                <li>List item 2</li>
-                            </ul>
-
+                            {{ news.text }}
                         </div>
                     </div>
                 </div>

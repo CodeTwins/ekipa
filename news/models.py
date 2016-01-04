@@ -1,4 +1,6 @@
 from datetime import datetime
+
+from django.core.urlresolvers import reverse
 from django.db import models
 from djangocms_text_ckeditor.fields import HTMLField
 
@@ -17,6 +19,9 @@ class News(models.Model):
     publication_date = models.DateTimeField(default=datetime.now, blank=True)
     text = HTMLField(configuration='CKEDITOR_MODEL_V1', blank=True)
     image = FilerImageField(blank=True, null=True, on_delete=models.SET_NULL)
+
+    def get_absolute_url(self):
+        return reverse('news:news-detail', kwargs={'slug': self.slug, })
 
     def __str__(self):
         return self.title
