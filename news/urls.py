@@ -4,7 +4,7 @@ from news.views import NewsListView, NewsDetailView
 
 urlpatterns = patterns('',
     # ListView
-    url(r'^top_ten/$', NewsListView.as_view(), name='news-top-ten'),
+    url(r'^$', NewsListView.as_view(), name='news-list'),
 
     # DetailView
     url(r'^(?P<slug>[\w-]*\w)$', NewsDetailView.as_view(), name='news-detail')

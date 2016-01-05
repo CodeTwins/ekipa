@@ -1,52 +1,7 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <title>EKIПA — Football Agency</title>
-
-    <meta charset="UTF-8">
-    <meta name="HandheldFriendly" content="true"/>  
-    <meta name="MobileOptimized" content="320"/> 
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no" />
-
-
-    <link rel="image_src" href="img/simple_logo.jpg">
-    <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-    
-    <meta name="title" content="EKIПA — Football Agency" />
-    <meta name="description" content="Ekipa — football agency" />
-
-    <meta property="og:title" content="EKIПA — Football Agency" />
-    <meta property="og:description" content="Ekipa — football agency" />
-    <meta property="og:site_name" content="EKIПA">
-    <meta property="og:locale" content="en" > 
-    <meta property="og:image" content="img/og-logo.png">
-
-    <!-- FONTS -->
-    <link href='https://fonts.googleapis.com/css?family=PT+Sans:400,400italic,700,700italic|PT+Serif:400,400italic,700,700italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-    <!--[if IE 7]>
-        <link rel="stylesheet" href="css/font-awesome-4.2.0/css/font-awesome-ie7.min.css">
-    <![endif]-->
-
-    <!-- STYLES -->
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="css/style.css" />
-    <!--[if IE]>
-        <link rel="stylesheet" type="text/css" href="css/style-IE.css" />
-    <![endif]-->
-
-    <!-- SCRIPTS -->
-    <script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
-    <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
-    <!--[if lt IE 9]>
-        <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
-
-
-
-</head>
-<body>
+{% extends 'main_base.html' %}
+{% load thumbnail staticfiles %}
+{% block body %}
+    <body>
 
     <!-- HEADER -->
     <section id="hero" class="dark-bg">
@@ -54,18 +9,19 @@
             <div class="col-12-full clearfix">
                 <header class="clearfix">
                     <div id="logo" class="col-3 left">
-                        <a href=""><img src="img/logo.png" alt=""></a>
+                        <a href=""><img src="{% static 'img/logo.png' %}" alt=""></a>
                     </div>
                     <div id="menu" class="col-9 right">
                         <ul class="clearfix">
-                            <li><a href="">News <span class="decorator"></span></a></li>
+                            <li><a href="{% url 'news:news-list' %}">News <span class="decorator"></span></a></li>
                             <li><a href="">Contact <span class="decorator"></span></a></li>
                         </ul>
                     </div>
                 </header>
 
                 <div id="slogan" class="col-9 left">
-                    <h1 class="caption">Hello, we are <u>EKIPA</u> — kick-ass <u>football agency</u>, that blow your mind!</h1>
+                    <h1 class="caption">Hello, we are <u>EKIPA</u> — kick-ass <u>football agency</u>, that blow your
+                        mind!</h1>
                 </div>
             </div>
         </div>
@@ -84,25 +40,42 @@
                         </a>
 
                         <div id="carousel" class="carousel slide" data-ride="carousel">
-                          <!-- Wrapper for slides -->
-                          <div class="carousel-inner clearfix" role="listbox">
-                            <div class="item active">
-                                <a href="">Russia seeks economic revenge against Turkey over downed jet.</a>
+                            <!-- Wrapper for slides -->
+                            <div class="carousel-inner clearfix" role="listbox">
+                                {% for news_item in object_list %}
+                                    {% if forloop.counter == 1 %}
+                                        <div class="item active">
+                                            <a href="{{ news_item.get_absolute_url }}">
+                                                {{ news_item.title }}
+                                            </a>
+                                        </div>
+                                    {% else %}
+                                        <div class="item">
+                                            <a href="{{ news_item.get_absolute_url }}">
+                                                {{ news_item.title }}
+                                            </a>
+                                        </div>
+                                    {% endif %}
+                                {% empty %}
+                                    <div class="item">
+                                        <a href="">
+                                            There are no news yet.
+                                        </a>
+                                    </div>
+                                {% endfor %}
                             </div>
-                            <div class="item">
-                                <a href="">This is just short caption</a>
-                            </div>
-                          </div>
 
-                          <!-- Controls -->
-                          <div class="carousel-controls">
-                            <a class="carousel-control control-left" href="#carousel" role="button" data-slide="prev">
-                                <span class="fa fa-angle-left"></span>
-                            </a>
-                            <a class="carousel-control control-right" href="#carousel" role="button" data-slide="next">
-                                <span class="fa fa-angle-right"></span>
-                            </a>
-                          </div>
+                            <!-- Controls -->
+                            <div class="carousel-controls">
+                                <a class="carousel-control control-left" href="#carousel" role="button"
+                                   data-slide="prev">
+                                    <span class="fa fa-angle-left"></span>
+                                </a>
+                                <a class="carousel-control control-right" href="#carousel" role="button"
+                                   data-slide="next">
+                                    <span class="fa fa-angle-right"></span>
+                                </a>
+                            </div>
                         </div>
                     </div>
 
@@ -118,18 +91,20 @@
                 <div class="col-6 left">
                     <h3>Our partners</h3>
                     <a href="http://soccerdreamz.de/">
-                        <img src="img/soccerdreamz.png" alt="">
+                        <img src="{% static 'img/soccerdreamz.png' %}" alt="">
                     </a>
                 </div>
                 <div class="col-6 right">
                     <h3>Contacts</h3>
+
                     <div class="contact-links">
                         <p>
-                            <i class="fa fa-envelope-square"></i> 
+                            <i class="fa fa-envelope-square"></i>
                             <a href="mailto:info@ekipa-agency.com">info@ekipa-agency.com</a>
                         </p>
+
                         <p>
-                            <i class="fa fa-phone-square"></i> 
+                            <i class="fa fa-phone-square"></i>
                             +7 (915) 223-24-24
                         </p>
                     </div>
@@ -150,5 +125,5 @@
         </div>
     </footer>
 
-</body>
-</html>
+    </body>
+{% endblock body %}

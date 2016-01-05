@@ -293,7 +293,7 @@ body {
 #header {
   width: 100%;
   padding: 50px 0;
-  background: url("../img/bg.jpg") no-repeat 50% 0;
+  background: url('/static/img/bg.jpg') no-repeat 50% 0;
   background-size: cover; }
   #hero header #logo img,
   #header header #logo img {
