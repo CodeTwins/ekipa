@@ -29,10 +29,6 @@ ALLOWED_HOSTS = []
 
 # Application definition
 
-
-
-
-
 ROOT_URLCONF = 'ekipa_site.urls'
 
 WSGI_APPLICATION = 'ekipa_site.wsgi.application'
@@ -62,12 +58,12 @@ USE_TZ = True
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
-# STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
-STATICFILES_DIRS = (
-    os.path.join(BASE_DIR, 'ekipa_site', 'static'),
-    os.path.join(BASE_DIR, 'static')
-)
+# STATICFILES_DIRS = (
+#     os.path.join(BASE_DIR, 'ekipa_site'),
+#     os.path.join(BASE_DIR, 'static')
+# )
 SITE_ID = 1
 
 TEMPLATES = [
@@ -141,7 +137,6 @@ INSTALLED_APPS = (
     'djangocms_googlemap',
     'djangocms_inherit',
     'djangocms_link',
-    'reversion',
     'ekipa_site',
 
     'news',
@@ -183,9 +178,9 @@ CMS_PLACEHOLDER_CONF = {}
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'HOST': 'localhost',
-        'NAME': 'project.db',
+        'ENGINE': 'django.db.backends.mysql',
+        'HOST': '',
+        'NAME': '',
         'PASSWORD': '',
         'PORT': '',
         'USER': ''

@@ -1,8 +1,8 @@
-from django.conf.urls import patterns, url
+from django.conf.urls import url
 
 from ekipa.views import HomePageView
 
-urlpatterns = patterns('',
+urlpatterns = [
     # ListView
     url(r'^$', HomePageView.as_view(), name='home-page'),
-)
+]
