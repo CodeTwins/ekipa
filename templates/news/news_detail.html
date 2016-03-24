@@ -1,62 +1,30 @@
 {% extends 'main_base.html' %}
-{% load thumbnail staticfiles %}
+{% load cms_tags staticfiles thumbnail %}
+
+
+
+{% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block bodyclass %}inner-page{% endblock bodyclass %}
+
 {% block body %}
-<body class="inner-page">
-
-    <!-- HEADER -->
-    <section id="header">
-        <div class="wrap">
-            <div class="col-12-full clearfix">
-                <header class="clearfix">
-                    <div id="logo" class="col-3 left">
-                        <a href=""><img src="{% static 'img/logo-black.png' %}" alt=""></a>
-                    </div>
-                    <div id="menu" class="col-9 right">
-                        <ul class="clearfix">
-                            <li><a href="">News</a></li>
-                            <li><a href="">Contact</a></li>
-                        </ul>
-                    </div>
-                </header>
-            </div>
-        </div>
-    </section>
-
-
-    <!-- CONTENT -->
-    <section id="content">
-        <div class="wrap">
-            <div class="col-12-full clearfix">
-                <div class="content-block col-12 clearfix">
-                    <div class="content-block-image">
-                        {% thumbnail news.image '200x200' crop as image %}
-                        <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="">
-                    </div>
-                    <div class="content-block-text">
-                        <h1 class="content-block-text-heading">{{ news.title }}</h1>
-                        <div class="content-block-text-date">{{ news.publication_date }}</div>
-                        <div class="content-block-text-post text">
-                            {{ news.text }}
-                        </div>
+<!-- CONTENT -->
+<section id="content">
+    <div class="wrap">
+        <div class="col-12-full clearfix">
+            <div class="content-block col-12 clearfix">
+                <div class="content-block-image">
+                    {% thumbnail news.image '200x200' crop as image %}
+                    <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="">
+                </div>
+                <div class="content-block-text">
+                    <h1 class="content-block-text-heading">{{ news.title }}</h1>
+                    <div class="content-block-text-date">{{ news.publication_date }}</div>
+                    <div class="content-block-text-post text">
+                        {{ news.text }}
                     </div>
                 </div>
             </div>
         </div>
-    </section>
-
-
-    <footer>
-        <div class="wrap">
-            <div class="col-12-full clearfix">
-                <div class="col-12 text-center">
-                    <span class="copyright">
-                        © 2014-2015 Ekipa
-                    </span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-
-</body>
+    </div>
+</section>
 {% endblock body %}

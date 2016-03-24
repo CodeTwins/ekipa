@@ -1,129 +1,114 @@
 {% extends 'main_base.html' %}
-{% load thumbnail staticfiles %}
-{% block body %}
-    <body>
+{% load cms_tags menu_tags sekizai_tags staticfiles thumbnail %}
 
-    <!-- HEADER -->
-    <section id="hero" class="dark-bg">
-        <div class="wrap">
-            <div class="col-12-full clearfix">
-                <header class="clearfix">
-                    <div id="logo" class="col-3 left">
-                        <a href=""><img src="{% static 'img/logo.png' %}" alt=""></a>
-                    </div>
-                    <div id="menu" class="col-9 right">
-                        <ul class="clearfix">
-                            <li><a href="{% url 'news:news-list' %}">News <span class="decorator"></span></a></li>
-                            <li><a href="">Contact <span class="decorator"></span></a></li>
-                        </ul>
-                    </div>
-                </header>
 
-                <div id="slogan" class="col-9 left">
-                    <h1 class="caption">Hello, we are <u>EKIPA</u> — kick-ass <u>football agency</u>, that blow your
-                        mind!</h1>
+
+{% block header %}
+<!-- HEADER -->
+<section id="hero" class="dark-bg">
+    <div class="wrap">
+        <div class="col-12-full clearfix">
+            <header class="clearfix">
+                <div id="logo" class="col-3 col-s-4 left">
+                    <a href=""><img src="{% static 'img/logo.png' %}" alt=""></a>
                 </div>
+                <div id="menu" class="col-9 col-s-4 right">
+                    <ul class="clearfix">
+                        {% show_menu 0 0 100 100 "menu/menu_main.html" %}
+                    </ul>
+                </div>
+            </header>
+
+            <div id="slogan" class="col-9 left">
+                <h1 class="caption">{% placeholder "content" %}</h1>
             </div>
         </div>
-    </section>
+    </div>
+</section>
+{% endblock header %}
 
-    <!-- NEWSFEED -->
-    <section id="newsfeed">
-        <div class="wrap">
-            <div class="col-12-full clearfix">
-                <div class="col-12 clearfix">
+{% block body %}
+<!-- NEWSFEED -->
+<section id="newsfeed">
+    <div class="wrap">
+        <div class="col-12-full clearfix">
+            <div class="col-12 clearfix">
 
-                    <div id="news-widget" class="clearfix">
-                        <a href="" class="news-widget-heading">
-                            <i class="fa fa-newspaper-o"></i>
-                            <span class="news-widget-heading-label">Latest News</span>
-                        </a>
+                <div id="news-widget" class="clearfix">
+                    <a href="{% url 'news:news-list' %}" class="news-widget-heading">
+                        <i class="fa fa-newspaper-o"></i>
+                        <span class="news-widget-heading-label">Latest News</span>
+                    </a>
 
-                        <div id="carousel" class="carousel slide" data-ride="carousel">
-                            <!-- Wrapper for slides -->
-                            <div class="carousel-inner clearfix" role="listbox">
-                                {% for news_item in object_list %}
-                                    {% if forloop.counter == 1 %}
-                                        <div class="item active">
-                                            <a href="{{ news_item.get_absolute_url }}">
-                                                {{ news_item.title }}
-                                            </a>
-                                        </div>
-                                    {% else %}
-                                        <div class="item">
-                                            <a href="{{ news_item.get_absolute_url }}">
-                                                {{ news_item.title }}
-                                            </a>
-                                        </div>
-                                    {% endif %}
-                                {% empty %}
-                                    <div class="item">
-                                        <a href="">
-                                            There are no news yet.
+                    <div id="carousel" class="carousel slide" data-ride="carousel">
+                        <!-- Wrapper for slides -->
+                        <div class="carousel-inner clearfix" role="listbox">
+                            {% for news_item in object_list %}
+                                {% if forloop.counter == 1 %}
+                                    <div class="item active">
+                                        <a href="{{ news_item.get_absolute_url }}">
+                                            {{ news_item.title }}
                                         </a>
                                     </div>
-                                {% endfor %}
-                            </div>
+                                {% else %}
+                                    <div class="item">
+                                        <a href="{{ news_item.get_absolute_url }}">
+                                            {{ news_item.title }}
+                                        </a>
+                                    </div>
+                                {% endif %}
+                            {% empty %}
+                                <div class="item">
+                                    <a href="">
+                                        There are no news yet.
+                                    </a>
+                                </div>
+                            {% endfor %}
+                        </div>
 
-                            <!-- Controls -->
-                            <div class="carousel-controls">
-                                <a class="carousel-control control-left" href="#carousel" role="button"
-                                   data-slide="prev">
-                                    <span class="fa fa-angle-left"></span>
-                                </a>
-                                <a class="carousel-control control-right" href="#carousel" role="button"
-                                   data-slide="next">
-                                    <span class="fa fa-angle-right"></span>
-                                </a>
-                            </div>
+                        <!-- Controls -->
+                        <div class="carousel-controls">
+                            <a class="carousel-control control-left" href="#carousel" role="button"
+                               data-slide="prev">
+                                <span class="fa fa-angle-left"></span>
+                            </a>
+                            <a class="carousel-control control-right" href="#carousel" role="button"
+                               data-slide="next">
+                                <span class="fa fa-angle-right"></span>
+                            </a>
                         </div>
                     </div>
+                </div>
 
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- INFO -->
+<section id="info">
+    <div class="wrap">
+        <div class="col-12-full clearfix">
+            <div class="col-6 col-s-4 left">
+                <h3>Our partners</h3>
+                {% static_placeholder "partners" %}
+            </div>
+            <div class="col-6 col-s-4 right">
+                <h3>Contacts</h3>
+
+                <div class="contact-links">
+                    <p>
+                        <i class="fa fa-envelope-square"></i>
+                        {% static_placeholder "email" %}
+                    </p>
+
+                    <p>
+                        <i class="fa fa-phone-square"></i>
+                        {% static_placeholder "phone" %}
+                    </p>
                 </div>
             </div>
         </div>
-    </section>
-
-    <!-- INFO -->
-    <section id="info">
-        <div class="wrap">
-            <div class="col-12-full clearfix">
-                <div class="col-6 left">
-                    <h3>Our partners</h3>
-                    <a href="http://soccerdreamz.de/">
-                        <img src="{% static 'img/soccerdreamz.png' %}" alt="">
-                    </a>
-                </div>
-                <div class="col-6 right">
-                    <h3>Contacts</h3>
-
-                    <div class="contact-links">
-                        <p>
-                            <i class="fa fa-envelope-square"></i>
-                            <a href="mailto:info@ekipa-agency.com">info@ekipa-agency.com</a>
-                        </p>
-
-                        <p>
-                            <i class="fa fa-phone-square"></i>
-                            +7 (915) 223-24-24
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer>
-        <div class="wrap">
-            <div class="col-12-full clearfix">
-                <div class="col-12 text-center">
-                    <span class="copyright">
-                        &copy; 2014-2015 Ekipa
-                    </span>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    </body>
+    </div>
+</section>
 {% endblock body %}

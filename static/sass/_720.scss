@@ -317,52 +317,32 @@ table,
 
 
 
+/* === MAIN PAGE === */
 /* HEADER */
-#menu{
-    padding: 0;
-
-    #menu-open-btn{
-        display: inline-block;
-        *display: inline;
-        *zoom: 1;
+#hero,
+#header{
+    #slogan{
+        margin-top:     5*$margin;
+        margin-bottom:  10*$margin;
+        h1{
+            font-size: 36px;
+        }
     }
+}
 
-    ul{
-        // display: none;
-        // height: auto;
-        // border-top: 3px solid $shadow-blue;
-
-        li{
-            float: none;
-
-            a{
-                padding: $margin 2*$margin;
-                border-top: 1px solid $shadow-blue;
-                background: #134d8e;
-
-                &:hover .menu-border,
-                .fa-home{
-                    display: none;
-                }
-
-                #home-text{
-                    display: inline;
-                }
-            }
-
-            .dropdown-menu{
-                position: static;
-                float: none;
-                border: none;
-                top: 80%;
-
-                li{
-                    a{
-                        padding: $margin 4*$margin;
-                        border: none;
-                        background: none;
-                    }
-                }
+#newsfeed{
+    height: 126px;
+    #news-widget{
+        width: 700px;
+        .news-widget-heading{
+            width: 100%;
+            height: 84px;
+            text-align: center;
+        }
+        #carousel{
+            width: 700px;
+            .carousel-inner{
+                width: 620px;
             }
         }
     }
@@ -370,111 +350,26 @@ table,
 
 
 
-/* HERO */
-#hero-text{
-    margin-bottom: 4*$margin;
-}
-
-
-
+/* === INNER PAGE === */
 /* CONTENT */
 #content{
-    .nav-stacked>li{
-        float: left;
-    }
-}
-
-.treemap-years{
-    .tab-pane{
-        .nav{
-            background: none;
-
-            li{
-                margin: 0;
-
-                a{
-                    padding: 0 10px 0 30px;
-                }
+    .content-block{
+        .content-block-text{
+            padding: 4*$margin 6*$margin;
+            .content-block-text-heading{
+                font-size: 36px;
             }
+            .content-block-text-date{
+                margin-top: 2*$margin;
+                margin-bottom: 2*$margin;
+            }
+        }
+    }
+    .heading-block{
+        .heading-block-title{
+            font-size: 32px;
         }
     }
 }
 
-#sidebar{
-    .col-m-6{
-        margin-bottom: 4*$margin;
-    }
-}
 
-footer{
-    .col-m-3{
-        margin-bottom: 4*$margin;
-    }
-
-    .col-m-12{
-        text-align: center;
-    }
-}
-
-
-
-/* ============================ */
-/* APPS PAGE */
-.apps-list{
-    li{
-        width: 340px; // col-m-6
-    }
-}
-
-
-
-/* ============================ */
-/* OPENDATA PAGE */
-
-
-
-
-/* ============================ */
-/* ABOUT PAGE */
-
-
-
-
-/* ============================ */
-/* FAQ PAGE */
-
-
-
-
-/* ============================ */
-/* GLOSSARY PAGE */
-
-
-
-
-/* ============================ */
-/* NEWS PAGE */
-
-
-
-
-/* ============================ */
-/* IN-CONTROL PAGE */
-
-
-
-
-/* ============================ */
-/* ANALYTICS PAGES */
-
-
-
-
-/* ============================ */
-/* REGION PAGES */
-
-
-
-
-/* ============================ */
-/* CONTEST PAGES */

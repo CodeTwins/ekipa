@@ -1,8 +1,29 @@
-{% extends "base.html" %}
-{% load cms_tags %}
+{% extends 'main_base.html' %}
+{% load cms_tags staticfiles thumbnail %}
+
+
 
 {% block title %}{% page_attribute "page_title" %}{% endblock title %}
+{% block bodyclass %}inner-page{% endblock bodyclass %}
 
-{% block content %}
-    {% placeholder "content" %}
-{% endblock content %}
+{% block body %}
+<!-- CONTENT -->
+<section id="content">
+    <div class="wrap">
+        <div class="col-12-full clearfix">
+            <div class="heading-block col-12 clearfix text-center">
+                <h1 class="heading-block-title">
+                    {% page_attribute "page_title" %}
+                </h1>
+            </div>
+            <div class="content-block col-12 clearfix">
+                <div class="content-block-text">
+                    <div class="content-block-text-post text">
+                        {% placeholder "content" %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock body %}

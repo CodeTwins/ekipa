@@ -155,103 +155,24 @@
 
 
 
-/* HEADER */
-#menu{
-    ul{
-        li{
-            a{
-                font-size: 12px;
-                padding: 10px 7px;
+
+/* NEWSFEED */
+#newsfeed{
+    height: 42px;
+    #news-widget{
+        width: 940px;
+        .news-widget-heading{
+            width: 180px;
+            height: 84px;
+            .fa{
+                display: none;
+            }
+        }
+        #carousel{
+            width: 760px;
+            .carousel-inner{
+                width: 680px;
             }
         }
     }
-}
-
-
-
-
-/* HERO */
-.milestones{
-    .milestone{
-        font-size: 12px;
-        h4{
-            font-size: 16px;
-        }
-    }
-}
-
-
-
-
-/* CONTENT */
-#ContainerGraph{
-    border: 1px solid $grey;
-}
-
-#contest{
-    .prise-fund{
-        margin-top: 42px;
-        font-size: 18px;
-    }
-}
-
-
-
-
-/* ============================ */
-/* APPS PAGE */
-.apps-list{
-    li{
-        width: 300px; // col-4
-    }
-}
-
-
-
-/* ============================ */
-/* OPENDATA PAGE */
-
-
-
-
-/* ============================ */
-/* ABOUT PAGE */
-
-
-
-
-/* ============================ */
-/* FAQ PAGE */
-
-
-
-
-/* ============================ */
-/* GLOSSARY PAGE */
-
-
-
-
-/* ============================ */
-/* NEWS PAGE */
-
-
-
-
-/* ============================ */
-/* IN-CONTROL PAGE */
-
-
-
-
-/* ============================ */
-/* ANALYTICS PAGES */
-
-
-
-
-/* ============================ */
-/* REGION PAGES */
-.region-map{
-    overflow: auto;
 }
