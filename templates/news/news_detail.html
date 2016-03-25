@@ -20,7 +20,7 @@
                     <h1 class="content-block-text-heading">{{ news.title }}</h1>
                     <div class="content-block-text-date">{{ news.publication_date }}</div>
                     <div class="content-block-text-post text">
-                        {{ news.text }}
+                        {{ news.text|safe}}
                     </div>
                 </div>
             </div>
