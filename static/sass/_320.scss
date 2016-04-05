@@ -221,9 +221,17 @@ h6{
             text-align: center;
             ul{
                 li{
+                    float: none;
+                    padding-bottom: $margin;
                     a{
                         padding-bottom: $margin;
                         font-size: 18px;
+                        .decorator{
+                            display: none;
+                        }
+                        &:hover{
+                            text-decoration: underline;
+                        }
                     }
                 }
             }

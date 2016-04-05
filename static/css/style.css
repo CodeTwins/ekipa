@@ -848,6 +848,9 @@ body.inner-page {
   /* ELEMENTS */
   /* === MAIN PAGE === */
   /* HEADER */
+  #hero header #menu ul li a,
+  #header header #menu ul li a {
+    font-size: 18px; }
   #hero #slogan,
   #header #slogan {
     margin-top: 50px;
@@ -1052,10 +1055,20 @@ body.inner-page {
   #hero header #menu,
   #header header #menu {
     text-align: center; }
-    #hero header #menu ul li a,
-    #header header #menu ul li a {
-      padding-bottom: 10px;
-      font-size: 18px; }
+    #hero header #menu ul li,
+    #header header #menu ul li {
+      float: none;
+      padding-bottom: 10px; }
+      #hero header #menu ul li a,
+      #header header #menu ul li a {
+        padding-bottom: 10px;
+        font-size: 18px; }
+        #hero header #menu ul li a .decorator,
+        #header header #menu ul li a .decorator {
+          display: none; }
+        #hero header #menu ul li a:hover,
+        #header header #menu ul li a:hover {
+          text-decoration: underline; }
   #hero #slogan,
   #header #slogan {
     margin-top: 20px;

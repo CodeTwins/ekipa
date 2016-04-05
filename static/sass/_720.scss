@@ -321,6 +321,18 @@ table,
 /* HEADER */
 #hero,
 #header{
+    header{
+        #menu{
+            ul{
+                li{
+                    a{
+                        font-size: 18px;
+                    }
+                }
+            }
+        }
+    }
+
     #slogan{
         margin-top:     5*$margin;
         margin-bottom:  10*$margin;
