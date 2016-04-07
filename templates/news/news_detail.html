@@ -12,9 +12,9 @@
     <div class="wrap">
         <div class="col-12-full clearfix">
             <div class="content-block col-12 clearfix">
-                <div class="content-block-image">
-                    {% thumbnail news.image '200x200' crop as image %}
-                    <img src="{{ image.url }}" width="{{ image.width }}" height="{{ image.height }}" alt="">
+                <div class="content-block-image text-center">
+
+                    <img src="{{ news.image.url }}" alt="">
                 </div>
                 <div class="content-block-text">
                     <h1 class="content-block-text-heading">{{ news.title }}</h1>
