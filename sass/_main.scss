@@ -230,7 +230,12 @@ body.inner-page{
            -moz-box-shadow: 0px 0px 25px 0px rgba(1,1,1,0.15);
                 box-shadow: 0px 0px 25px 0px rgba(1,1,1,0.15);
         .content-block-image{
-
+            max-height: 500px;
+            overflow: hidden;
+            img{
+                width: 100%;
+                margin: 0 auto;
+            }
         }
         .content-block-text{
             padding: 8*$margin 10*$margin;

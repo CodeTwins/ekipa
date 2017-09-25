@@ -150,13 +150,23 @@
 
 
 
+/* ELEMENTS */
 
-/* === MAIN PAGE === */
+
+
+
+
 /* NEWSFEED */
 #newsfeed{
+    height: 42px;
     #news-widget{
+        width: 940px;
         .news-widget-heading{
-            width: 140px;
+            width: 180px;
+            height: 84px;
+            .fa{
+                display: none;
+            }
         }
         #carousel{
             width: 760px;

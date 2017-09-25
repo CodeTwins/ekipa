@@ -1,0 +1,32 @@
+<div id="menu" class="col-9 right">
+    <ul class="clearfix">
+        <li>
+        	<a href="{{site.baseurl}}">Home 
+        		{% if page.layout == "home" or post.layout == "home" %}
+        		<span class="decorator"></span>
+        		{% endif %}
+        	</a>
+        </li>
+        <li>
+        	<a href="{{site.baseurl}}/about/">About Us 
+        		{% if page.layout == "home" or post.layout == "home" %}
+        		<span class="decorator"></span>
+        		{% endif %}
+        	</a>
+        </li>
+        <li>
+        	<a href="{{site.baseurl}}/news/">News 
+        		{% if page.layout == "home" or post.layout == "home" %}
+        		<span class="decorator"></span>
+        		{% endif %}
+        	</a>
+    	</li>
+        <li>
+        	<a href="{{site.baseurl}}/contacts/">Contacts 
+        		{% if page.layout == "home" or post.layout == "home" %}
+        		<span class="decorator"></span>
+        		{% endif %}
+        	</a>
+    	</li>
+    </ul>
+</div>
