@@ -71,3 +71,10 @@ $wrap:      1200px;
 
 // MAIN STYLES
 @import 'main';
+
+
+// MEDIA QUERIES
+// --to 1366
+@media only screen and (max-width: 1365px) {
+  @import '960';
+}
